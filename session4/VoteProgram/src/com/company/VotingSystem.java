@@ -32,6 +32,12 @@ public class VotingSystem {
     public void printResult(int votingNumber){
         votingList.get(votingNumber).printResult();
     }
+    public void printVotes(){
+        for(Voting v: votingList){
+            System.out.println(v.getQuestion());
+            v.printVotes();
+        }
+    }
 
 
 

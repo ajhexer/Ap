@@ -1,4 +1,7 @@
 package com.company;
+import ir.huri.jcal.JalaliCalendar;
+
+import java.util.Objects;
 
 public class Vote {
     private Person person;
@@ -7,6 +10,7 @@ public class Vote {
     public Vote(Person person, String date) {
         this.person = person;
         this.date = date;
+
     }
 
     public Person getPerson() {
@@ -19,11 +23,14 @@ public class Vote {
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        Vote tempVote = (Vote) obj;
+        return tempVote.getPerson() == this.getPerson();
+
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(person);
     }
+
 }
